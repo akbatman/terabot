@@ -190,9 +190,9 @@ async def start(m: UpdateNewMessage):
         reply_text,
         buttons=[
             [
-                Button.url("Update Channel", "https://t.me/akimaxmovies_2"),
+                Button.url("😎𝐎𝐰𝐧𝐞𝐫😎", "https://t.me/MrKhan_00"),
                 Button.url(
-                    "Repo", "https://t.me/akimaxmovies_2"
+                    "𝐂𝐡𝐚𝐧𝐧𝐞𝐥", "https://t.me/akimaxmovies_2"
                 ),
             ]
         ],
@@ -240,12 +240,12 @@ async def help_command(m: UpdateNewMessage):
     if not check_if:
         return await m.reply(f"Please join  @akimaxmovies_2 then send me the link again.")
     help_text = """
-Available commands:
+𝗔𝘃𝗮𝗶𝗹𝗮𝗯𝗹𝗲 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀:
 
-/start - Start using the bot.
-/help - Show this help message.
+/𝘀𝘁𝗮𝗿𝘁 - 𝗦𝘁𝗮𝗿𝘁 𝘂𝘀𝗶𝗻𝗴 𝘁𝗵𝗲 𝗯𝗼𝘁.
+/𝗵𝗲𝗹𝗽 - 𝗦𝗵𝗼𝘄 𝘁𝗵𝗶𝘀 𝗵𝗲𝗹𝗽 𝗺𝗲𝘀𝘀𝗮𝗴𝗲.
 
- @akimaxmovies_2
+ 𝗣𝗼𝘄𝗲𝗿𝗱 𝗕𝘆 𝗜𝗠𝗔𝗫 𝗖𝗟𝗢𝗨𝗗
 """
     link_preview = (False,)
     await m.reply(
@@ -253,9 +253,9 @@ Available commands:
         parse_mode="markdown",
         buttons=[
             [
-                Button.url("😎Owner😎", "https://t.me/MrKhan_00"),
+                Button.url("😎𝐎𝐰𝐧𝐞𝐫😎", "https://t.me/MrKhan_00"),
                 Button.url(
-                    "Channel", "https://t.me/akimaxmovies_2"
+                    "𝐂𝐡𝐚𝐧𝐧𝐞𝐥", "https://t.me/akimaxmovies_2"
                 ),
             ]
         ],
@@ -290,21 +290,21 @@ async def handle_message(m: Message):
 
     url = get_urls_from_string(m.text)
     if not url:
-        return await m.reply("Please enter a valid url.")
+        return await m.reply("𝗣𝗹𝗲𝗮𝘀𝗲 𝗲𝗻𝘁𝗲𝗿 𝗮 𝘃𝗮𝗹𝗶𝗱 𝘂𝗿𝗹.")
+    check_if = await is_user_on_chat(bot, "@akimaxmovies_2", m.peer_id)
+    if not check_if:
+        return await m.reply("𝗣𝗹𝗲𝗮𝘀𝗲 𝗷𝗼𝗶𝗻 @𝗮𝗸𝗶𝗺𝗮𝘅𝗺𝗼𝘃𝗶𝗲𝘀_𝟮  𝘁𝗵𝗲𝗻 𝘀𝗲𝗻𝗱 𝗺𝗲 𝘁𝗵𝗲 𝗹𝗶𝗻𝗸 𝗮𝗴𝗮𝗶𝗻.")
     check_if = await is_user_on_chat(bot, " @akimaxmovies_2", m.peer_id)
     if not check_if:
-        return await m.reply("Please join  @akimaxmovies_2  then send me the link again.")
-    check_if = await is_user_on_chat(bot, " @akimaxmovies_2", m.peer_id)
-    if not check_if:
-        return await m.reply("Please join  @akimaxmovies_2 then send me the link again.")
+        return await m.reply("𝗣𝗹𝗲𝗮𝘀𝗲 𝗷𝗼𝗶𝗻 @𝗮𝗸𝗶𝗺𝗮𝘅𝗺𝗼𝘃𝗶𝗲𝘀_𝟮  𝘁𝗵𝗲𝗻 𝘀𝗲𝗻𝗱 𝗺𝗲 𝘁𝗵𝗲 𝗹𝗶𝗻𝗸 𝗮𝗴𝗮𝗶𝗻.")
     is_spam = db.get(m.sender_id)
     if is_spam and m.sender_id not in [6791744215]:
-        return await m.reply("You are spamming. Please wait a 1 minute and try again.")
+        return await m.reply("𝗬𝗼𝘂 𝗮𝗿𝗲 𝘀𝗽𝗮𝗺𝗺𝗶𝗻𝗴. 𝗣𝗹𝗲𝗮𝘀𝗲 𝘄𝗮𝗶𝘁 𝗮 𝟭 𝗺𝗶𝗻𝘂𝘁𝗲 𝗮𝗻𝗱 𝘁𝗿𝘆 𝗮𝗴𝗮𝗶𝗻.")
     hm = await m.reply("Sending you the media wait...")
     count = db.get(f"check_{m.sender_id}")
     if count and int(count) > 30:
         return await hm.edit(
-            "You are limited now. Please come back after 1 hours or use another account."
+            "𝗬𝗼𝘂 𝗮𝗿𝗲 𝗹𝗶𝗺𝗶𝘁𝗲𝗱 𝗻𝗼𝘄. 𝗣𝗹𝗲𝗮𝘀𝗲 𝗰𝗼𝗺𝗲 𝗯𝗮𝗰𝗸 𝗮𝗳𝘁𝗲𝗿 𝟭 𝗵𝗼𝘂𝗿𝘀 𝗼𝗿 𝘂𝘀𝗲 𝗮𝗻𝗼𝘁𝗵𝗲𝗿 𝗮𝗰𝗰𝗼𝘂𝗻𝘁."
         )
     shorturl = extract_code_from_url(url)
     if not shorturl:
@@ -354,11 +354,11 @@ async def handle_message(m: Message):
         and not data["file_name"].endswith(".jpeg")
     ):
         return await hm.edit(
-            f"Sorry! File is not supported for now. I can download only .mp4, .mkv, .webm, .ts, .mov, .hevc, .png, .jpg, .jpeg files."
+            f"𝗦𝗼𝗿𝗿𝘆! 𝗙𝗶𝗹𝗲 𝗶𝘀 𝗻𝗼𝘁 𝘀𝘂𝗽𝗽𝗼𝗿𝘁𝗲𝗱 𝗳𝗼𝗿 𝗻𝗼𝘄. 𝗜 𝗰𝗮𝗻 𝗱𝗼𝘄𝗻𝗹𝗼𝗮𝗱 𝗼𝗻𝗹𝘆 .𝗺𝗽𝟰, .𝗺𝗸𝘃, .𝘄𝗲𝗯𝗺, .𝘁𝘀, .𝗺𝗼𝘃, .𝗵𝗲𝘃𝗰, .𝗽𝗻𝗴, .𝗷𝗽𝗴, .𝗷𝗽𝗲𝗴 𝗳𝗶𝗹𝗲𝘀."
         )
     if int(data["sizebytes"]) > 1024650000 and m.sender_id not in [6791744215]:
         return await hm.edit(
-            f"Sorry! File is too big. I can download only 1GB and this file is of {data['size']} ."
+            f"𝗦𝗼𝗿𝗿𝘆! 𝗙𝗶𝗹𝗲 𝗶𝘀 𝘁𝗼𝗼 𝗯𝗶𝗴. 𝗜 𝗰𝗮𝗻 𝗱𝗼𝘄𝗻𝗹𝗼𝗮𝗱 𝗼𝗻𝗹𝘆 𝟭𝗚𝗕 𝗮𝗻𝗱 𝘁𝗵𝗶𝘀 𝗳𝗶𝗹𝗲 𝗶𝘀 𝗼𝗳 {data['size']} ."
         )
 
     start_time = time.time()
@@ -368,7 +368,7 @@ async def handle_message(m: Message):
 
         if not cansend.can_send():
             return
-        bar_length = 20
+        bar_length = 18
         percent = current_downloaded / total_downloaded
         arrow = "█" * int(percent * bar_length)
         spaces = "░" * (bar_length - len(arrow))
@@ -420,7 +420,7 @@ Size: **{data["size"]}**
         )
         if not download:
             return await hm.edit(
-                f"Sorry! Download Failed but you can download it from [here]({data['direct_link']}).",
+                f"𝗦𝗼𝗿𝗿𝘆! 𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱 𝗙𝗮𝗶𝗹𝗲𝗱 𝗯𝘂𝘁 𝘆𝗼𝘂 𝗰𝗮𝗻 𝗱𝗼𝘄𝗻𝗹𝗼𝗮𝗱 𝗶𝘁 𝗳𝗿𝗼𝗺 [here]({data['direct_link']}).",
                 parse_mode="markdown",
             )
         file = await bot.send_file(
@@ -443,7 +443,7 @@ Size: **{data["size"]}**
             print(e)
     except Exception:
         return await hm.edit(
-            f"Sorry! Download Failed but you can download it from [here]({data['direct_link']}).",
+            f"𝗦𝗼𝗿𝗿𝘆! 𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱 𝗙𝗮𝗶𝗹𝗲𝗱 𝗯𝘂𝘁 𝘆𝗼𝘂 𝗰𝗮𝗻 𝗱𝗼𝘄𝗻𝗹𝗼𝗮𝗱 𝗶𝘁 𝗳𝗿𝗼𝗺 [here]({data['direct_link']}).",
             parse_mode="markdown",
         )
     try:
@@ -484,5 +484,5 @@ Size: **{data["size"]}**
 bot.start(bot_token=BOT_TOKEN)
 print("Bot started!")
 print(f"This bot is connected to {BOT_USERNAME}.")
-print("This bot is deployed by  @akimaxmovies_2 kindly join this channel for more updates.")
+print("𝗧𝗵𝗶𝘀 𝗯𝗼𝘁 𝗶𝘀 𝗱𝗲𝗽𝗹𝗼𝘆𝗲𝗱 𝗯𝘆 @𝗮𝗸𝗶𝗺𝗮𝘅𝗺𝗼𝘃𝗶𝗲𝘀_𝟮 𝗸𝗶𝗻𝗱𝗹𝘆 𝗷𝗼𝗶𝗻 𝘁𝗵𝗶𝘀 𝗰𝗵𝗮𝗻𝗻𝗲𝗹 𝗳𝗼𝗿 𝗺𝗼𝗿𝗲 𝘂𝗽𝗱𝗮𝘁𝗲𝘀.")
 bot.run_until_disconnected()
