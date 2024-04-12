@@ -304,7 +304,7 @@ async def handle_message(m: Message):
     count = db.get(f"check_{m.sender_id}")
     if count and int(count) > 500:
         return await hm.edit(
-            "You are limited now. Please come back after 2 hours or use another account."
+            "You are limited now. Please come back after 1 hours or use another account."
         )
     shorturl = extract_code_from_url(url)
     if not shorturl:
