@@ -302,7 +302,7 @@ async def handle_message(m: Message):
         return await m.reply("You are spamming. Please wait a 1 minute and try again.")
     hm = await m.reply("Sending you the media wait...")
     count = db.get(f"check_{m.sender_id}")
-    if count and int(count) > 500:
+    if count and int(count) > 20:
         return await hm.edit(
             "You are limited now. Please come back after 2 hours or use another account."
         )
@@ -356,9 +356,9 @@ async def handle_message(m: Message):
         return await hm.edit(
             f"Sorry! File is not supported for now. I can download only .mp4, .mkv, .webm, .ts, .mov, .hevc, .png, .jpg, .jpeg files."
         )
-    if int(data["sizebytes"]) > 524288000 and m.sender_id not in [6791744215]:
+    if int(data["sizebytes"]) > 1024650000 and m.sender_id not in [6791744215]:
         return await hm.edit(
-            f"Sorry! File is too big. I can download only 500MB and this file is of {data['size']} ."
+            f"Sorry! File is too big. I can download only 1GB and this file is of {data['size']} ."
         )
 
     start_time = time.time()
