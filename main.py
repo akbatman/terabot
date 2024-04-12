@@ -332,7 +332,7 @@ async def handle_message(m: Message):
         db.set(
             f"check_{m.sender_id}",
             int(count) + 1 if count else 1,
-            ex=7200,
+            ex=3600,
         )
 
         return
