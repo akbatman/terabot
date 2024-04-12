@@ -121,12 +121,12 @@ async def unban_user(m: UpdateNewMessage):
 async def stats_command(m: UpdateNewMessage):
     if m.is_group or m.is_channel:
         return
-    check_if = await is_user_on_chat(bot, f"@AKiMaxMovies_01", m.peer_id)
+    check_if = await is_user_on_chat(bot, f"@akimaxmovies_2", m.peer_id)
     if not check_if:
-        return await m.reply(f"Please join @AKiMaxMovies_01 then send me the link again.")
-    check_if = await is_user_on_chat(bot, f"@AKiMaxMovies_01", m.peer_id)
+        return await m.reply(f"Please join @akimaxmovies_2 then send me the link again.")
+    check_if = await is_user_on_chat(bot, f"@akimaxmovies_2", m.peer_id)
     if not check_if:
-        return await m.reply(f"Please join @AKiMaxMovies_01 then send me the link again.")
+        return await m.reply(f"Please join @akimaxmovies_2 then send me the link again.")
 
     uptime = convert_seconds(time.time() - bot_start_time)
     message_count = get_message_count()
@@ -180,19 +180,19 @@ async def start(m: UpdateNewMessage):
         )
         db.sadd("new_users", str(user_id))
 
-    check_if = await is_user_on_chat(bot, f"@AKiMaxMovies_01", m.peer_id)
+    check_if = await is_user_on_chat(bot, f"@akimaxmovies_2", m.peer_id)
     if not check_if:
-        return await m.reply(f"Please join @AKiMaxMovies_01 then send me the link again.")
-    check_if = await is_user_on_chat(bot, f"@AKiMaxMovies_01", m.peer_id)
+        return await m.reply(f"Please join @akimaxmovies_2 then send me the link again.")
+    check_if = await is_user_on_chat(bot, f"@akimaxmovies_2", m.peer_id)
     if not check_if:
-        return await m.reply(f"Please join @AKiMaxMovies_01 then send me the link again.")
+        return await m.reply(f"Please join @akimaxmovies_2 then send me the link again.")
     await m.reply(
         reply_text,
         buttons=[
             [
-                Button.url("Update Channel", "https://t.me/AKiMaxMovies_01"),
+                Button.url("Update Channel", "https://t.me/akimaxmovies_2"),
                 Button.url(
-                    "Repo", "https://t.me/AKiMaxMovies_01"
+                    "Repo", "https://t.me/akimaxmovies_2"
                 ),
             ]
         ],
@@ -233,19 +233,19 @@ async def broadcast(m: UpdateNewMessage):
 async def help_command(m: UpdateNewMessage):
     if m.is_group or m.is_channel:
         return
-    check_if = await is_user_on_chat(bot, f" @AKiMaxMovies_01", m.peer_id)
+    check_if = await is_user_on_chat(bot, f" @akimaxmovies_2", m.peer_id)
     if not check_if:
-        return await m.reply(f"Please join  @AKiMaxMovies_01 then send me the link again.")
-    check_if = await is_user_on_chat(bot, f" @AKiMaxMovies_01", m.peer_id)
+        return await m.reply(f"Please join  @akimaxmovies_2 then send me the link again.")
+    check_if = await is_user_on_chat(bot, f" @akimaxmovies_2", m.peer_id)
     if not check_if:
-        return await m.reply(f"Please join  @AKiMaxMovies_01 then send me the link again.")
+        return await m.reply(f"Please join  @akimaxmovies_2 then send me the link again.")
     help_text = """
 Available commands:
 
 /start - Start using the bot.
 /help - Show this help message.
 
- @AKiMaxMovies_01
+ @akimaxmovies_2
 """
     link_preview = (False,)
     await m.reply(
@@ -253,9 +253,9 @@ Available commands:
         parse_mode="markdown",
         buttons=[
             [
-                Button.url("Updates", "https://t.me/AKiMaxMovies_01"),
+                Button.url("Updates", "https://t.me/akimaxmovies_2"),
                 Button.url(
-                    "Repo", "https://t.me/AKiMaxMovies_01"
+                    "Repo", "https://t.me/akimaxmovies_2"
                 ),
             ]
         ],
@@ -291,18 +291,18 @@ async def handle_message(m: Message):
     url = get_urls_from_string(m.text)
     if not url:
         return await m.reply("Please enter a valid url.")
-    check_if = await is_user_on_chat(bot, " @AKiMaxMovies_01", m.peer_id)
+    check_if = await is_user_on_chat(bot, " @akimaxmovies_2", m.peer_id)
     if not check_if:
-        return await m.reply("Please join  @AKiMaxMovies_01  then send me the link again.")
-    check_if = await is_user_on_chat(bot, " @AKiMaxMovies_01", m.peer_id)
+        return await m.reply("Please join  @akimaxmovies_2  then send me the link again.")
+    check_if = await is_user_on_chat(bot, " @akimaxmovies_2", m.peer_id)
     if not check_if:
-        return await m.reply("Please join  @AKiMaxMovies_01 then send me the link again.")
+        return await m.reply("Please join  @akimaxmovies_2 then send me the link again.")
     is_spam = db.get(m.sender_id)
     if is_spam and m.sender_id not in [6791744215]:
         return await m.reply("You are spamming. Please wait a 1 minute and try again.")
     hm = await m.reply("Sending you the media wait...")
     count = db.get(f"check_{m.sender_id}")
-    if count and int(count) > 20:
+    if count and int(count) > 500:
         return await hm.edit(
             "You are limited now. Please come back after 2 hours or use another account."
         )
@@ -407,7 +407,7 @@ async def handle_message(m: Message):
 File Name: `{data['file_name']}`
 Size: **{data["size"]}**
 
- @AKiMaxMovies_01
+ @akimaxmovies_2
 """,
             supports_streaming=True,
             spoiler=True,
@@ -430,7 +430,7 @@ Size: **{data["size"]}**
 File Name: `{data['file_name']}`
 Size: **{data["size"]}**
 
- @AKiMaxMovies_01
+ @akimaxmovies_2
 """,
             progress_callback=progress_bar,
             thumb=thumbnail if thumbnail else None,
@@ -477,12 +477,12 @@ Size: **{data["size"]}**
         db.set(
             f"check_{m.sender_id}",
             int(count) + 1 if count else 1,
-            ex=7200,
+            ex=3600,
         )
 
 
 bot.start(bot_token=BOT_TOKEN)
 print("Bot started!")
 print(f"This bot is connected to {BOT_USERNAME}.")
-print("This bot is deployed by  @AKiMaxMovies_01 kindly join this channel for more updates.")
+print("This bot is deployed by  @akimaxmovies_2 kindly join this channel for more updates.")
 bot.run_until_disconnected()
