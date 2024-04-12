@@ -253,9 +253,9 @@ Available commands:
         parse_mode="markdown",
         buttons=[
             [
-                Button.url("Updates", "https://t.me/akimaxmovies_2"),
+                Button.url("😎Owner😎", "https://t.me/MrKhan_00"),
                 Button.url(
-                    "Repo", "https://t.me/akimaxmovies_2"
+                    "Channel", "https://t.me/akimaxmovies_2"
                 ),
             ]
         ],
@@ -302,7 +302,7 @@ async def handle_message(m: Message):
         return await m.reply("You are spamming. Please wait a 1 minute and try again.")
     hm = await m.reply("Sending you the media wait...")
     count = db.get(f"check_{m.sender_id}")
-    if count and int(count) > 500:
+    if count and int(count) > 2:
         return await hm.edit(
             "You are limited now. Please come back after 1 hours or use another account."
         )
